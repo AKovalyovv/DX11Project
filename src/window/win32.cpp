@@ -11,7 +11,7 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 	return DefWindowProc(hwnd, uMsg, wParam, lParam);
 }
 
-HWND GenerateWindow(const wchar_t* windowName, HINSTANCE hInstance)
+HWND GenerateWindow(const wchar_t* windowName, HINSTANCE hInstance, int resWidth, int resHeight)
 {
 
 	WNDCLASS wc = { };
@@ -27,7 +27,7 @@ HWND GenerateWindow(const wchar_t* windowName, HINSTANCE hInstance)
 		windowName,
 		WS_OVERLAPPEDWINDOW,
 
-		CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT,
+		CW_USEDEFAULT, CW_USEDEFAULT, resWidth, resHeight,
 
 		NULL,
 		NULL,
